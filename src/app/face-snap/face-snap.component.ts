@@ -1,12 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FaceSnap } from '../model/face-snap';
 
 @Component({
   selector: 'app-face-snap',
   standalone: true,
   imports: [],
   templateUrl: './face-snap.component.html',
-  styleUrl: './face-snap.component.scss'
+  styleUrl: './face-snap.component.scss',
 })
-export class FaceSnapComponent {
+export class FaceSnapComponent implements OnInit {
+  @Input() faceSnap!: FaceSnap;
+  is_liked!: boolean;
 
+  ngOnInit() {
+    this.is_liked = false;
+  }
+
+  onSnap(): void {
+    if (!this.is_liked) {
+      this.faceSnap.onAddsnap();
+      this.is_liked = true;
+    } else {
+      this.faceSnap.onRemovesnap();
+      this.is_liked = false;
+    }
+  }
 }
