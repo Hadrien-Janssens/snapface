@@ -7,4 +7,18 @@ header {
     max-width: 800px;
     margin: 0 auto;
   }
+
+  a {
+    margin: 0 10px;
+    color: #333;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .active {
+    color: #666;
+    text-decoration: underline;
+  }
 }

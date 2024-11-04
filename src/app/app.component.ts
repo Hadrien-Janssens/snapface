@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { FaceSnapListComponent } from './face-snap-list/face-snap-list.component';
 import { HeaderComponent } from './header/header.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
-  imports: [FaceSnapListComponent, HeaderComponent],
+  imports: [HeaderComponent, RouterOutlet],
   styleUrl: './app.component.scss',
 })
 export class AppComponent {}
